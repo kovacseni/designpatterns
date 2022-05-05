@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Mail {
 
-    private List<Address> to = new ArrayList<>();
+    private List<Address> to;
 
     private Address from;
 
@@ -21,7 +21,7 @@ public class Mail {
     }
 
     public Mail(Mail mail) {
-        this.to = new ArrayList<>(mail.to);
+        this.to = new ArrayList<>(mail.to.stream().map(a -> new Address(a)).toList());
         this.from = mail.from;
         this.subject = mail.subject;
         this.mailContent = new MailContent(mail.mailContent);
