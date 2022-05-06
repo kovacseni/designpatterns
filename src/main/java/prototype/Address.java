@@ -2,9 +2,9 @@ package prototype;
 
 public class Address {
 
-    private String name;
+    private final String name;
 
-    private String email;
+    private final String email;
 
     public Address(String name, String email) {
         this.name = name;
@@ -20,15 +20,7 @@ public class Address {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }
